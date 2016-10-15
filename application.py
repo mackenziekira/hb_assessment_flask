@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_debugtoolbar import DebugToolbarExtension
 
 
@@ -18,6 +18,27 @@ def index_page():
     # and return that result of rendering this, like:
     #
     # return render_template("index.html")
+
+@app.route("/application-form")
+def application_form_page():
+    """Show the application form page"""
+
+    return render_template('application-form.html')
+
+@app.route("/application", methods=["POST"])
+def application_page():
+    """Take form POST request and render application confirmation"""
+
+    firstname = request.form.get('firstname')
+    lastname = request.form.get('lastname')
+    desired_salary = request.form.get('desired_salary')
+    desired_job = request.form.get('desired_job')
+
+    return render_template('application-response.html',
+                            firstname=firstname,
+                            lastname=lastname,
+                            desired_salary=desired_salary,
+                            desired_job=desired_job)
 
 
 if __name__ == "__main__":

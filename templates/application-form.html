@@ -1,13 +1,23 @@
-<!doctype html>
-<html>
-<head>
-    <title>Skills-Web</title>
-    <link rel="stylesheet" href="/static/styles.css">
-</head>
-<body>
+{% extends 'base.html' %}
 
-<!-- This page needs a form that can capture data about the user's
-first name, last name, job title, and salary requirements. -->
+{% block title %}Application Form{% endblock %}
+    
+{% block body %}
+  <h1>Application Form</h1>
+  <h2>Join the m&#0233;lange of melon lovers</h2>
+  <section class="instructions">Here at Ubermelon, we believe in equal rights for all melons&mdash;Life, Liberty, the pursuit of Happiness&mdash;melons deserve those, too. Help us give melons their freedom, one seed at a time. Everyone knows freedom begins with that most iconic image of the American Dream: the open road. So help Ubermelon disrupt the Cucurbitaceae industry...Uber, but for melons!</section>
 
-</body>
-</html>
+  <form action="/application" method="POST">
+    <label>First Name: </label><input type="text" name="firstname"><br>
+    <label>Last Name: </label><input type="text" name="lastname"><br>
+    <label>Desired Salary (number): </label><input type="number" name="desired_salary"><br>
+    <label>Desired Job: </label>
+    <select name="desired_job">
+      <option value="Software Engineer">Software Engineer
+      <option value="QA Engineer">QA Engineer
+      <option value="Product Manager">Product Manager
+    </select><br>
+    <input type="submit" value="Submit">
+  </form>
+
+{% endblock %}
