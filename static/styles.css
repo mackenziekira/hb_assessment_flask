@@ -7,6 +7,6 @@ input[name="lastname"] {
 }
 
 section.instructions {
-    border: .1em solid black;
-    margin: 1em 0em;
+    border: 0.1em solid black;
+    margin: 1em 0;
 }

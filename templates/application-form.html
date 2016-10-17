@@ -3,16 +3,17 @@
 {% block title %}Application Form{% endblock %}
     
 {% block body %}
+
   <h1>Application Form</h1>
   <h2>Join the m&#0233;lange of melon lovers</h2>
   <section class="instructions">Here at Ubermelon, we believe in equal rights for all melons&mdash;Life, Liberty, the pursuit of Happiness&mdash;melons deserve those, too. Help us give melons their freedom, one seed at a time. Everyone knows freedom begins with that most iconic image of the American Dream: the open road. So help Ubermelon disrupt the Cucurbitaceae industry...Uber, but for melons!</section>
 
   <form action="/application" method="POST">
-    <label>First Name: </label><input type="text" name="firstname" required><br>
-    <label>Last Name: </label><input type="text" name="lastname" required><br>
-    <label>Desired Salary (number): </label><input type="number" name="desired_salary" required><br>
-    <label>Desired Job: </label>
-    <select name="desired_job">
+    <label for="firstname">First Name: </label><input id="firstname" type="text" name="firstname" required><br>
+    <label for="lastname">Last Name: </label><input id="lastname" type="text" name="lastname" required><br>
+    <label for="desiredsalary">Desired Salary (number): </label><input id="desiredsalary" type="number" name="desired_salary" required><br>
+    <label for="desiredjob">Desired Job: </label>
+    <select id="desiredjob" name="desired_job">
       <option value="Software Engineer">Software Engineer
       <option value="QA Engineer">QA Engineer
       <option value="Product Manager">Product Manager
